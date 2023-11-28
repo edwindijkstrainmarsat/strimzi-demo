@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: strimzi-operator
+spec:
+  destination:
+    name: ''
+    namespace: kafka
+    server: 'https://kubernetes.default.svc'
+  sources:
+    - repoURL: 'https://strimzi.io/charts/'
+      path: ''
+      targetRevision: 0.38.0
+      chart: strimzi-kafka-operator
+      helm:
+        parameters:
+          - name: prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues
+            value: 'false'
+          - name: prometheus.prometheusSpec.ignoreNamespaceSelectors
+            value: 'true'
+    - repoURL: 'https://github.com/edwindijkstra/strimzi-demo.git'
+      path: ./kafka/monitoring
+      targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
