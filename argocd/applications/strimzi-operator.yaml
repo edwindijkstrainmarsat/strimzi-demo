@@ -14,9 +14,7 @@ spec:
       chart: strimzi-kafka-operator
       helm:
         parameters:
-          - name: prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues
-            value: 'false'
-          - name: prometheus.prometheusSpec.ignoreNamespaceSelectors
+          - name: dashboards.enabled
             value: 'true'
     - repoURL: 'https://github.com/edwindijkstrainmarsat/strimzi-demo.git'
       path: ./kafka/monitoring
