@@ -18,7 +18,7 @@ spec:
             value: 'false'
           - name: prometheus.prometheusSpec.ignoreNamespaceSelectors
             value: 'true'
-    - repoURL: 'https://github.com/edwindijkstra/strimzi-demo.git'
+    - repoURL: 'https://github.com/edwindijkstrainmarsat/strimzi-demo.git'
       path: ./kafka/monitoring
       targetRevision: HEAD
   project: default

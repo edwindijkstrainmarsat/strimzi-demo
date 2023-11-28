@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: ./argocd/applications
-    repoURL: 'https://github.com/edwindijkstra/strimzi-demo.git'
+    repoURL: 'https://github.com/edwindijkstrainmarsat/strimzi-demo.git'
     targetRevision: HEAD
   project: default
   syncPolicy:
