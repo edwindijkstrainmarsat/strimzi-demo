@@ -5,10 +5,10 @@ metadata:
   labels:
     strimzi.io/cluster: my-cluster
 spec:
-  authentication:
-    type: scram-sha-512
+  # authentication:
+  #   type: scram-sha-512
   authorization:
-    type: simple
+    # type: simple
     acls:
       # Example consumer Acls for topic my-topic using consumer group my-group
       - resource:
