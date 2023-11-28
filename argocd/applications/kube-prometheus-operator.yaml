@@ -14,7 +14,9 @@ spec:
     chart: kube-prometheus-stack
     helm:
       parameters:
-        - name: dashboards.enabled
+        - name: prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues
+          value: 'false'
+        - name: prometheus.prometheusSpec.ignoreNamespaceSelectors
           value: 'true'
   sources: []
   project: default
