@@ -17,4 +17,4 @@ spec:
   tasksMax: 2
   config:
     file: "/opt/kafka/LICENSE"
-    topic: filestream-topic
+    topic: my-topic
