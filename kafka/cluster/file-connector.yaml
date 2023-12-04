@@ -16,5 +16,5 @@ spec:
   class: org.apache.kafka.connect.file.FileStreamSourceConnector
   tasksMax: 2
   config:
-    file: "/opt/kafka/LICENSE"
-    topic: my-topic
+    file: "/proc/loadavg"
+    topic: filestream-topic
