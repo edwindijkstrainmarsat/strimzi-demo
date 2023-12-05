@@ -12,11 +12,6 @@ spec:
       targetRevision: 54.2.2
       chart: kube-prometheus-stack
       helm:
-        values: |-
-          prometheus.prometheusSpec.additionalConfig
-            additionalScrapeConfigs:
-              name: additional-scrape-configs
-              key: prometheus-additional.yaml
         parameters:
           - name: prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues
             value: 'false'
@@ -28,6 +23,10 @@ spec:
             value: 'false'
           - name: prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues
             value: 'false'
+          - name: prometheus.prometheusSpec.additionalConfig.name
+            value: 'additional-scrape-configs'
+          - name: prometheus.prometheusSpec.additionalConfig.key
+            value: 'prometheus-additional.yaml'
     - repoURL: 'https://github.com/edwindijkstrainmarsat/strimzi-demo.git'
       path: ./kafka/monitoring
       targetRevision: HEAD
