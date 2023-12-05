@@ -7,15 +7,18 @@ spec:
     name: ''
     namespace: kafka
     server: 'https://kubernetes.default.svc'
-  source:
-    repoURL: 'https://strimzi.io/charts/'
-    path: ''
-    targetRevision: 0.38.0
-    chart: strimzi-kafka-operator
-    helm:
-      parameters:
-        - name: dashboards.enabled
-          value: 'true'
+  sources:
+    - repoURL: 'https://strimzi.io/charts/'
+      path: ''
+      targetRevision: 0.38.0
+      chart: strimzi-kafka-operator
+      helm:
+        parameters:
+          - name: dashboards.enabled
+            value: 'true'
+    - repoURL: 'https://github.com/edwindijkstrainmarsat/strimzi-demo.git'
+      path: ./kafka/monitoring
+      targetRevision: HEAD
   project: default
   syncPolicy:
     automated:
