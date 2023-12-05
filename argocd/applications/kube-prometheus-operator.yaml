@@ -18,6 +18,12 @@ spec:
           value: 'false'
         - name: prometheus.prometheusSpec.ignoreNamespaceSelectors
           value: 'true'
+        - name: prometheus.prometheusSpec.probeSelectorNilUsesHelmValues
+          value: 'false'
+        - name: prometheus.prometheusSpec.ruleSelectorNilUsesHelmValues
+          value: 'false'
+        - name: prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues
+          value: 'false'
   sources: []
   project: default
   syncPolicy:
