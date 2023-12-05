@@ -13,11 +13,10 @@ spec:
       chart: kube-prometheus-stack
       helm:
         values: |-
-          prometheus:
-            prometheusSpec:
-              additionalScrapeConfigs:
-                name: additional-scrape-configs
-                key: prometheus-additional.yaml
+          prometheus.prometheusSpec.additionalConfig
+            additionalScrapeConfigs:
+              name: additional-scrape-configs
+              key: prometheus-additional.yaml
         parameters:
           - name: prometheus.prometheusSpec.podMonitorSelectorNilUsesHelmValues
             value: 'false'
