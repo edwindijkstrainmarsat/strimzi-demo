@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kafka-schema-ksqldb
+spec:
+  project: default
+  source:
+    repoURL: 'https://confluentinc.github.io/cp-helm-charts/'
+    targetRevision: 0.6.1
+    helm:
+      parameters:
+        - name: cp-control-center.enabled
+          value: 'false'
+        - name: cp-kafka-connect.enabled
+          value: 'false'
+        - name: cp-kafka-rest.enabled
+          value: 'false'
+        - name: cp-kafka.enabled
+          value: 'false'
+        - name: cp-zookeeper.enabled
+          value: 'false'
+        - name: cp-schema-registry.kafka.bootstrapServers
+          value: 'PLAINTEXT://my-cluster-kafka-bootstrap:9092'
+        - name: cp-ksql-server.kafka.bootstrapServers
+          value: 'PLAINTEXT://my-cluster-kafka-bootstrap:9092'
+    chart: cp-helm-charts
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: kafka
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
