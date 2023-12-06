@@ -37,7 +37,7 @@ spec:
       # it should not happen that you pull someone else's container image. However, we
       # recommend changing this to your own container registry or using a different
       # image name for any other than demo purposes.
-      image: ttl.sh/strimzi-connect-edwin-test4:24h
+      image: ttl.sh/strimzi-connect-edwin-test5:24h
     plugins:
       - name: kafka-connect-file
         artifacts:
