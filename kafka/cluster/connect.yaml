@@ -38,7 +38,7 @@ spec:
       # recommend changing this to your own container registry or using a different
       # image name for any other than demo purposes.
       image: ttl.sh/strimzi-connect-edwin-test7:24h
-      additionalKanikoOptions: --single-snapshot
+      additionalKanikoOptions: "--single-snapshot"
     plugins:
       - name: kafka-connect-file
         artifacts:
