@@ -37,7 +37,7 @@ spec:
       # it should not happen that you pull someone else's container image. However, we
       # recommend changing this to your own container registry or using a different
       # image name for any other than demo purposes.
-      image: ttl.sh/strimzi-connect-edwin-test2:24h
+      image: ttl.sh/strimzi-connect-edwin-test3:24h
     plugins:
       - name: kafka-connect-file
         artifacts:
@@ -53,6 +53,7 @@ spec:
         artifacts:
           - type: zip
             url: https://github.com/castorm/kafka-connect-http/releases/download/v0.8.11/castorm-kafka-connect-http-0.8.11.zip
+
 ---
 kind: ConfigMap
 apiVersion: v1
