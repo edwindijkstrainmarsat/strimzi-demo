@@ -45,7 +45,7 @@ spec:
             group: org.apache.kafka
             artifact: connect-file
             version: 3.6.0
-      - name: castorm-kafka-connect-http
+      - name: http
         artifacts:
           - type: zip
             url: https://github.com/castorm/kafka-connect-http/releases/download/v0.8.11/castorm-kafka-connect-http-0.8.11.zip
