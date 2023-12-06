@@ -38,17 +38,17 @@ spec:
       # recommend changing this to your own container registry or using a different
       # image name for any other than demo purposes.
       image: ttl.sh/strimzi-connect-edwin-test7:24h
-    # plugins:
+    plugins:
     #   - name: kafka-connect-file
     #     artifacts:
     #       - type: maven
     #         group: org.apache.kafka
     #         artifact: connect-file
     #         version: 3.6.0
-      # - name: castorm-kafka-connect
-      #   artifacts:
-      #     - type: zip
-      #       url: https://github.com/castorm/kafka-connect-http/releases/download/v0.8.11/castorm-kafka-connect-http-0.8.11.zip
+      - name: castorm-kafka-connect
+        artifacts:
+          - type: zip
+            url: https://github.com/castorm/kafka-connect-http/releases/download/v0.8.11/castorm-kafka-connect-http-0.8.11.zip
       # - name: clickhouse-kafka-connect
       #   artifacts:
       #     - type: zip
