@@ -44,7 +44,7 @@ spec:
           - name: KAFKA_BOOTSTRAP_SERVERS
             value: my-cluster-kafka-bootstrap:9092
           - name: RECONCILE_INTERVAL_MS
-            value: "1000"
+            value: "100000"
           - name: TLS_ENABLED
             value: "false"
         livenessProbe:
