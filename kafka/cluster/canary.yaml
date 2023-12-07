@@ -27,7 +27,7 @@ metadata:
   labels:
     app: strimzi-canary
 spec:
-  replicas: 10
+  replicas: 1
   selector:
     matchLabels:
       app: strimzi-canary
@@ -44,7 +44,7 @@ spec:
           - name: KAFKA_BOOTSTRAP_SERVERS
             value: my-cluster-kafka-bootstrap:9092
           - name: RECONCILE_INTERVAL_MS
-            value: "10"
+            value: "1"
           - name: TLS_ENABLED
             value: "false"
         livenessProbe:
