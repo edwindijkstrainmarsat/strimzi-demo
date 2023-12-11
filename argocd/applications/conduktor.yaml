@@ -23,7 +23,7 @@ spec:
         - name: config.database.host
           value: postgresql
         - name: config.database.port
-          value: 5432
+          value: "5432"
         - name: config.database.name
           value: postgresql
         - name: config.database.username
