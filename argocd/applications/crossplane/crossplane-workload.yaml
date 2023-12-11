@@ -8,11 +8,7 @@ spec:
     namespace: crossplane-system
     server: 'https://kubernetes.default.svc'
   source:
-    path: ./argocd/crossplane-workload
+    path: ./crossplane-workload
     repoURL: 'https://github.com/edwindijkstrainmarsat/strimzi-demo.git'
     targetRevision: HEAD
   project: default
-  syncPolicy:
-    automated:
-      prune: false
-      selfHeal: false

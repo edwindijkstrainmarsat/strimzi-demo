@@ -11,7 +11,7 @@ spec:
       targetRevision: 1.14.3
       chart: crossplane
     - repoURL: 'https://github.com/edwindijkstrainmarsat/strimzi-demo.git'
-      path: ./argocd/crossplane-workload
+      path: ./crossplane
       targetRevision: HEAD
   project: default
   syncPolicy:
