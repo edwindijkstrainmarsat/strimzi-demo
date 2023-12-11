@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: AoA-Crossplane
+  name: aoa-crossplane
 spec:
   destination:
     name: ''
