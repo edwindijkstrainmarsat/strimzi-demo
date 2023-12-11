@@ -1,7 +1,7 @@
 apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  name: sample-bucket-crossplane
+  name: sample-bucket-crossplane1
   annotations:
     project: "test-project"
   labels:
