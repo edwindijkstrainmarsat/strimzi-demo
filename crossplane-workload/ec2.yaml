@@ -4,6 +4,8 @@ metadata:
   labels:
     testing.upbound.io/example-name: instance
   name: instance
+  annotations:
+    project: "test-project"
 spec:
   forProvider:
     ami: ami-0fc5d935ebf8bc3bc

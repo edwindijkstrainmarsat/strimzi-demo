@@ -2,6 +2,8 @@ apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
   name: sample-bucket-crossplane
+  annotations:
+    project: "test-project"
 spec:
   forProvider:
     region: us-east-1
