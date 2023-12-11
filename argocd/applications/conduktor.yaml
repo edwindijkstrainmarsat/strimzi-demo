@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: conduktor
+spec:
+  destination:
+    name: ''
+    namespace: kafka
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://helm.conduktor.io'
+    targetRevision: 1.4.2
+    chart: console
+    helm:
+      parameters:
+        - name: config.admin.email
+          value: admin@example.com
+        - name: config.admin.password
+          value: password
+        - name: config.organization.name
+          value: example
+  sources: []
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
