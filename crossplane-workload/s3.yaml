@@ -4,6 +4,8 @@ metadata:
   name: sample-bucket-crossplane
   annotations:
     project: "test-project"
+  labels:
+    app.kubernetes.io/instance: some-application
 spec:
   forProvider:
     region: us-east-1

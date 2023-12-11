@@ -3,6 +3,7 @@ kind: Instance
 metadata:
   labels:
     testing.upbound.io/example-name: instance
+    app.kubernetes.io/instance: some-application
   name: instance
   annotations:
     project: "test-project"
