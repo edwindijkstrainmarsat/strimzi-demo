@@ -12,7 +12,7 @@ spec:
     ami: ami-0fc5d935ebf8bc3bc
     instanceType: t3.micro
     region: us-east-1
-    ebsBlockDevice:
+    rootBlockDevice:
       volumeType: gp3
       volumeSize: 10
     tags:
