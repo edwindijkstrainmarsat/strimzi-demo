@@ -25,7 +25,7 @@ spec:
         - name: config.database.port
           value: "5432"
         - name: config.database.name
-          value: postgresql
+          value: conduktor
         - name: config.database.username
           value: postgres
         - name: config.database.password
