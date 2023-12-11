@@ -27,7 +27,7 @@ spec:
         - name: config.database.name
           value: postgresql
         - name: config.database.username
-          value: admin
+          value: postgres
         - name: config.database.password
           value: password
 
