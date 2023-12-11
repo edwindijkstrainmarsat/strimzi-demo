@@ -6,8 +6,8 @@ metadata:
   name: instance
 spec:
   forProvider:
-    ami: ami-0d9858aa3c6322f73
-    instanceType: t2.micro
+    ami: ami-0fc5d935ebf8bc3bc
+    instanceType: t3.micro
     region: us-east-1
     tags:
       type: upbound-test-instance
