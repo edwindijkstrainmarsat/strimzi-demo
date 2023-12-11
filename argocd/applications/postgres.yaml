@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: postgresql
+spec:
+  destination:
+    name: ''
+    namespace: kafka
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: registry-1.docker.io/bitnamicharts
+    targetRevision: 13.2.24
+    chart: postgresql
+    helm:
+      parameters:
+        - name: global.postgresql.auth.postgresPassword
+          value: password
+  sources: []
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

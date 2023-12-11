@@ -20,6 +20,19 @@ spec:
           value: password
         - name: config.organization.name
           value: example
+        - name: config.database.host
+          value: postgresql
+        - name: config.database.port
+          value: 5432
+        - name: config.database.name
+          value: postgresql
+        - name: config.database.username
+          value: admin
+        - name: config.database.password
+          value: password
+
+        - name: config.database.password
+          value: password
   sources: []
   project: default
   syncPolicy:
