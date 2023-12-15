@@ -11,6 +11,20 @@ spec:
         port: 9092
         type: loadbalancer
         tls: false
+        configuration:
+          bootstrap:
+            annotations:
+              service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+          brokers:
+          - broker: 0
+            annotations:
+              service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+          - broker: 1
+            annotations:
+              service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+          - broker: 2
+            annotations:
+              service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
       - name: tls
         port: 9093
         type: loadbalancer
