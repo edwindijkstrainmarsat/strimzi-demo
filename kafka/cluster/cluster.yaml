@@ -13,7 +13,7 @@ spec:
         tls: false
       - name: tls
         port: 9093
-        type: internal
+        type: loadbalancer
         tls: true
         authentication:
           type: scram-sha-512
