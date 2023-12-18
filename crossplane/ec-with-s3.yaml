@@ -64,7 +64,8 @@ spec:
         spec:
           forProvider:
             tags:
-              - name: test-name
+              - Key: Name
+                Value: Testvalue
             ami: ami-0fc5d935ebf8bc3bc
             instanceType: t3.micro
             region: us-east-1
