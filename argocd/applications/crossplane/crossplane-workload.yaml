@@ -11,3 +11,6 @@ spec:
     repoURL: 'https://github.com/edwindijkstrainmarsat/strimzi-demo.git'
     targetRevision: HEAD
   project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
