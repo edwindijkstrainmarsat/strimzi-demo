@@ -5,9 +5,10 @@ metadata:
 spec: 
   location: "US"
 ---
-apiVersion: example.com/v1
+apiVersion: database.example.com/v1alpha1
 kind: NoSQLClaim
 metadata:
-  name: my-nosql-database-claim
+  name: my-nosql-database
+  namespace: crossplane-test
 spec: 
   location: "US"
