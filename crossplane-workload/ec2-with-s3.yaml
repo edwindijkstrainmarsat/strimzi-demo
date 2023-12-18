@@ -1,0 +1,7 @@
+apiVersion: instances.example.com/v1alpha1
+kind: persistant-instanceClaim
+metadata:
+  name: testclaim-for-ec2-s3
+  namespace: customer-a
+spec: 
+  location: "US"
