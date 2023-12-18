@@ -11,9 +11,9 @@ metadata:
   name: nosqls.database.example.com
 spec:
   group: database.example.com
-  # names:
-  #   kind: NoSQL
-  #   plural: nosqls
+  names:
+    kind: NoSQL
+    plural: nosqls
   versions:
   - name: v1alpha1
     schema:

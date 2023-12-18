@@ -4,3 +4,10 @@ metadata:
   name: my-nosql-database
 spec: 
   location: "US"
+---
+apiVersion: example.com/v1alpha1
+kind: NoSQLClaim
+metadata:
+  name: my-nosql-database-claim
+spec: 
+  location: "US"
