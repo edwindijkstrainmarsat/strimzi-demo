@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: crossplane-workload
+  name: customer-a
 spec:
   destination:
-    namespace: crossplane-system
+    namespace: customer-a
     server: 'https://kubernetes.default.svc'
   source:
     path: ./crossplane-workload
