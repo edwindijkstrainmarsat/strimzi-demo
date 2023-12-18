@@ -65,7 +65,7 @@ spec:
     - name: ec2Instance
       base:
         apiVersion: ec2.aws.upbound.io/v1beta1
-        kind: Instace
+        kind: Instance
         metadata:
           name: crossplane-instance
         spec:
