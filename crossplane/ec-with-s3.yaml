@@ -8,7 +8,7 @@ spec:
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: persistant-instances.database.example.com
+  name: persistant-instances.instances.example.com
 spec:
   group: instances.example.com
   names:
