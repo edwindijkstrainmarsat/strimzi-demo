@@ -1,0 +1,90 @@
+apiVersion: instances.example.com/v1alpha1
+kind: persistant-instance
+metadata:
+  name: ec2-with-s3
+spec: 
+  location: "US"
+---
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: persistant-instances.database.example.com
+spec:
+  group: instances.example.com
+  names:
+    kind: persistant-instance
+    plural: persistant-instances
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              location:
+                type: string
+                oneOf:
+                  - pattern: '^EU$'
+                  - pattern: '^US$'
+            required:
+              - location
+    served: true
+    referenceable: true
+  claimNames:
+    kind: persistant-instanceClaim
+    plural: persistant-instanceclaim
+---
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: ec2-with-s3
+spec:
+  resources:
+    - name: s3Bucket
+      base:
+        apiVersion: s3.aws.upbound.io/v1beta1
+        kind: Bucket
+        metadata:
+          name: crossplane-bucket
+        spec:
+          forProvider:
+            region: us-east-1
+          providerConfigRef:
+            name: default
+      patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: "spec.location"
+          toFieldPath: "spec.forProvider.region"
+          transforms:
+            - type: map
+              map: 
+                EU: "eu-north-1"
+                US: "us-east-1"
+    - name: ec2Instance
+      base:
+        apiVersion: ec2.aws.upbound.io/v1beta1
+        kind: Instace
+        metadata:
+          name: crossplane-instance
+        spec:
+          forProvider:
+            ami: ami-0fc5d935ebf8bc3bc
+            instanceType: t3.micro
+            region: us-east-1
+            rootBlockDevice:
+              - volumeType: gp3
+                volumeSize: 10
+      patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: "spec.location"
+          toFieldPath: "spec.forProvider.region"
+          transforms:
+            - type: map
+              map: 
+                EU: "eu-north-1"
+                US: "us-east-1"
+  compositeTypeRef:
+    apiVersion: instances.example.com/v1alpha1
+    kind: persistant-instance
