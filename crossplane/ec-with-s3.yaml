@@ -1,10 +1,3 @@
-apiVersion: instances.example.com/v1alpha1
-kind: persistant-instance
-metadata:
-  name: ec2-with-s3
-spec: 
-  location: "US"
----
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
