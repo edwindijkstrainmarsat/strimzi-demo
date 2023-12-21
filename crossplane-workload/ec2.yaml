@@ -1,19 +1,19 @@
-apiVersion: ec2.aws.upbound.io/v1beta1
-kind: Instance
-metadata:
-  labels:
-    testing.upbound.io/example-name: instance
-    app.kubernetes.io/instance: some-application
-  name: instance
-  annotations:
-    project: "test-project"
-spec:
-  forProvider:
-    ami: ami-0fc5d935ebf8bc3bc
-    instanceType: t3.micro
-    region: us-east-1
-    rootBlockDevice:
-      - volumeType: gp3
-        volumeSize: 10
-    tags:
-      type: upbound-test-instance
+# apiVersion: ec2.aws.upbound.io/v1beta1
+# kind: Instance
+# metadata:
+#   labels:
+#     testing.upbound.io/example-name: instance
+#     app.kubernetes.io/instance: some-application
+#   name: instance
+#   annotations:
+#     project: "test-project"
+# spec:
+#   forProvider:
+#     ami: ami-0fc5d935ebf8bc3bc
+#     instanceType: t3.micro
+#     region: us-east-1
+#     rootBlockDevice:
+#       - volumeType: gp3
+#         volumeSize: 10
+#     tags:
+#       type: upbound-test-instance
