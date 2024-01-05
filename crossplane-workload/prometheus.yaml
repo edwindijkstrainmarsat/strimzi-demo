@@ -76,10 +76,9 @@ spec:
       params:
         'match[]':
         - '{job="demo_node_exporter"}'
-  # selector:
-  #   matchLabels:
-  #     app: prometheus
-  #     self-monitor: 'true'
+  selector:
+    matchLabels:
+      operated-prometheus: true
   namespaceSelector:
     matchNames:
       - customer-a
