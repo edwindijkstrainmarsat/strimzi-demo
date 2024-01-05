@@ -78,7 +78,7 @@ spec:
         - '{job="demo_node_exporter"}'
   selector:
     matchLabels:
-      operated-prometheus: true
+      operated-prometheus: 'true'
   namespaceSelector:
     matchNames:
       - customer-a
