@@ -71,10 +71,7 @@ metadata:
 spec:
   endpoints:
     - path: /metrics
-      port: http-web
-    - path: /metrics
-      port: reloader-web
-      scheme: http
+      port: web
   selector:
     matchLabels:
       app: prometheus
