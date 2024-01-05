@@ -60,9 +60,9 @@ metadata:
 type: Opaque
 stringData:
   prometheus-additional.yaml: |
-    - job_name: "prometheus"
+    - job_name: "demo_node_exporter"
       static_configs:
-      - targets: ["prometheus.demo.do.prometheus.io:9090"]
+      - targets: ["demo.do.prometheus.io:9100"]
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
