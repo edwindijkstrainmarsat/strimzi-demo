@@ -4,6 +4,8 @@ metadata:
   name: prometheus
   labels:
     prometheus: prometheus
+    app: prometheus
+    self-monitor: 'true'
 spec:
   replicas: 1
   serviceAccountName: prometheus
@@ -61,3 +63,19 @@ stringData:
     - job_name: "prometheus"
       static_configs:
       - targets: ["prometheus.demo.do.prometheus.io:9090"]
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: customer-a-prometheus
+spec:
+  endpoints:
+    - path: /metrics
+      port: http-web
+    - path: /metrics
+      port: reloader-web
+      scheme: http
+  selector:
+    matchLabels:
+      app: prometheus
+      self-monitor: 'true'
