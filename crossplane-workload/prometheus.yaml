@@ -75,7 +75,7 @@ spec:
       honorLabels: true
       params:
         'match[]':
-        - '{job%3D~"demo.*"}'
+        - '{job="demo_node_exporter"}'
   selector:
     matchLabels:
       app: prometheus
