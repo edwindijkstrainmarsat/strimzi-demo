@@ -69,6 +69,10 @@ kind: ServiceMonitor
 metadata:
   name: customer-a-prometheus
 spec:
+  params:
+    'match[]':
+    - '{job%3D~"demo.*"}'
+  honorLabels: true
   endpoints:
     - path: /federate
       port: web
