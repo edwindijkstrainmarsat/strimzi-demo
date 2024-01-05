@@ -7,11 +7,12 @@ metadata:
 spec:
   replicas: 1
   serviceAccountName: prometheus
+  serviceMonitorSelector:
+    matchLabels:
+      foo: bar
   additionalScrapeConfigs:
     name: additional-scrape-configs
     key: prometheus-additional.yaml
-  scrapeConfigSelector:
-    prometheus: system-monitoring-prometheus
 ---
 apiVersion: v1
 kind: ServiceAccount
@@ -59,17 +60,4 @@ stringData:
   prometheus-additional.yaml: |
     - job_name: "prometheus"
       static_configs:
-      - targets: ["localhost:9090"]
----
-apiVersion: monitoring.coreos.com/v1alpha1
-kind: ScrapeConfig
-metadata:
-  name: static-config
-  labels:
-    prometheus: system-monitoring-prometheus
-spec:
-  staticConfigs:
-    - labels:
-        job: prometheus
-      targets:
-        - prometheus.demo.do.prometheus.io:9090
+      - targets: ["prometheus.demo.do.prometheus.io:9090"]
