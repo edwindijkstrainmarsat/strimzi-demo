@@ -69,7 +69,6 @@ kind: ServiceMonitor
 metadata:
   name: customer-a-prometheus
 spec:
-  honorLabels: true
   endpoints:
     - path: /federate
       port: web
