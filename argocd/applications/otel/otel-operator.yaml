@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: otel
+spec:
+  destination:
+    namespace: otel
+    server: 'https://kubernetes.default.svc'
+  source:
+    repoURL: 'https://open-telemetry.github.io/opentelemetry-helm-charts'
+    targetRevision: 0.47.0
+    chart: opentelemetry-operator
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
