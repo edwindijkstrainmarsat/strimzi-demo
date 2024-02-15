@@ -10,6 +10,11 @@ spec:
     repoURL: 'https://open-telemetry.github.io/opentelemetry-helm-charts'
     targetRevision: 0.47.0
     chart: opentelemetry-operator
+    helm:
+      values: |-
+        presets:
+          kubernetesAttributes:
+            enabled: false
   sources: []
   project: default
   syncPolicy:
