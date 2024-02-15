@@ -12,6 +12,7 @@ spec:
     chart: opentelemetry-operator
   sources: []
   project: default
+  syncPolicy:
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
