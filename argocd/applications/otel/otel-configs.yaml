@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: customer-a
+spec:
+  destination:
+    namespace: customer-a
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ./otel-configs
+    repoURL: 'https://github.com/edwindijkstrainmarsat/strimzi-demo.git'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: otel
+  name: otel-operator
 spec:
   destination:
     namespace: otel
