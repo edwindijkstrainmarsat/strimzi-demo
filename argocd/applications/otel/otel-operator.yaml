@@ -12,10 +12,6 @@ spec:
     chart: opentelemetry-operator
   sources: []
   project: default
-  syncPolicy:
-    automated:
-      prune: false
-      selfHeal: false
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
