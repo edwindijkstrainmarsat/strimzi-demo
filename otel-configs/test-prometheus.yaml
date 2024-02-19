@@ -10,6 +10,10 @@ spec:
           listen_address: "0.0.0.0:54526"
         protocol: rfc3164
         location: UTC
+      otlp:
+        protocols:
+          grpc:
+          http:
     processors:
       memory_limiter:
         check_interval: 1s
@@ -25,6 +29,10 @@ spec:
     service:
       pipelines:
         traces:
+          receivers: [otlp]
+          processors: []
+          exporters: [debug]
+        logs:
           receivers: [syslog]
           processors: []
           exporters: [debug]
