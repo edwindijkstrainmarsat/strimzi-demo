@@ -24,15 +24,20 @@ spec:
         timeout: 10s
 
     exporters:
-      debug:
+      loadbalancing:
+        protocol:
+          otlp:
+        resolver:
+          dns:
+            hostname: otelcol.observability.svc.cluster.local
 
     service:
       pipelines:
         traces:
           receivers: [otlp]
           processors: []
-          exporters: [debug]
+          exporters: [loadbalancing]
         logs:
           receivers: [syslog]
           processors: []
-          exporters: [debug]
+          exporters: [loadbalancing]
